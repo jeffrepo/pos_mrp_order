@@ -81,7 +81,7 @@ class MrpProduction(models.Model):
                                     'product_uom_qty': bom_line.product_qty * mrp_order.product_qty,
                                     'picking_type_id': mrp_order.picking_type_id.id,
                                     'location_id': mrp_order.location_src_id.id,
-                                    'location_dest_id': bom_line.product_id.with_context(force_company=self.company_id.id).property_stock_production.id,
+                                    'location_dest_id': bom_line.product_id.property_stock_production.id,
                                     'company_id': mrp_order.company_id.id,
                                 }))
 
